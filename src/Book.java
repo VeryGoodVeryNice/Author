@@ -1,29 +1,35 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Book {
     String name;
-    Author author;
+    Author[] AuthorArray;
     double price;
     int quantity;
 
-    public Book(String name, Author author, double price, int quantity) {
+    public Book(String name, Author[] AuthorArray, double price, int quantity) {
         this.name = name;
-        this.author = author;
+        this.AuthorArray = AuthorArray;
         this.price = price;
         this.quantity = quantity;
     }
+
     public String getName() {
         return name;
     }
-    public String getAuthor() {
-        return author.toString();
+
+    public Author getAuthor(int x) {
+        return AuthorArray[x];
     }
+
     public double getPrice() {
         return price;
     }
+
     public int getQuantity() {
         return quantity;
     }
+
     public String setPrice() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter new price: ");
@@ -33,6 +39,7 @@ public class Book {
         return "Old price> " + temp + "$" +
                 "\n";
     }
+
     public String setQuantity() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter new quantity: ");
@@ -42,12 +49,18 @@ public class Book {
         return "Old quantity> " + temp + " copies" +
                 "\n";
     }
+
     public String toString() {
         return "Book: " + "\n" +
                 name + "\n" +
                 price + "$" + "\n" +
                 quantity + " copies left" + "\n" +
-                author.toString() + "\n" +
+                "\n" +
+                Arrays.toString(AuthorArray) + "\n" +
                 "\n";
     }
+
 }
+
+
+

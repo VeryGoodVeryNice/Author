@@ -42,6 +42,6 @@ public class Author {
         return "Author: " + "\n" +
                 name + "\n" +
                 g + "\n" +
-                email;
+                email + "\n";
     }
 }
