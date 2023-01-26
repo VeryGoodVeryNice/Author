@@ -22,6 +22,10 @@ public class Book {
         return AuthorArray[x];
     }
 
+    public Author[] getAuthors() {
+        return AuthorArray;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -29,6 +33,15 @@ public class Book {
     public int getQuantity() {
         return quantity;
     }
+
+    public String getAuthorsNames(){
+        int len = getAuthors().length;
+        String answer = "";
+        for(int i = 0; i < len; i++)
+            answer = answer + getAuthor(i).getName() + "\n";
+        return answer;
+    }
+
 
     public String setPrice() {
         Scanner keyboard = new Scanner(System.in);
